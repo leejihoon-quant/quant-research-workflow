@@ -7,20 +7,28 @@ A personal research engineering project exploring how quantitative alpha researc
 - Python tooling for organizing research evidence by market region and delay setting.
 - Structured records that preserve metrics, checks, provenance, and negative results instead of keeping only selected winners.
 - Offline validation and command-line lookup for reviewing prior research records.
-- A small synthetic-data pipeline demo and an adapted, callback-based collection helper.
+- Small synthetic-data and generalized worker examples for multi-stage screening and resilient collection.
 
-## Demo
+## Demos
 
-The demo validates a JSON record file, checks for duplicate IDs and malformed metric/check values, then filters records by region, delay, and idea family. It preserves `PENDING`, `UNKNOWN`, and failed checks in the output.
+Run the synthetic pipeline example:
 
 ```bash
 python pipeline_demo.py --region DEMO --delay 1
 python pipeline_demo.py --family trend
 ```
 
-`sample_records.json` is synthetic teaching data. Its metrics do not represent actual research or performance.
+Try the sanitized multi-stage screening worker:
 
-The `resilient_collection.py` module shows callback-based queue retries, cache validation, and reporting unresolved items. It is an adapted, standalone helper with no platform client, credentials, strategy logic, or private records.
+```bash
+python screening_worker.py --demo
+```
+
+It applies configurable format, type, coverage, history, and check-state gates, then reports selected, held, and rejected candidate IDs. It never reads or emits expression text. Built-in examples and thresholds are fictional and are not the original research settings.
+
+`sample_records.json` contains synthetic teaching data. Its metrics do not represent actual research or performance.
+
+The `resilient_collection.py` module demonstrates callback-based retries, cache validation, and reporting unresolved items. It is a generalized standalone helper with no platform client, credentials, strategy logic, or private records.
 
 ## Workflow at a glance
 
