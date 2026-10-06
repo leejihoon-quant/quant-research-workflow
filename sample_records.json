@@ -1,0 +1,47 @@
+[
+  {
+    "record_id": "example-001",
+    "region": "DEMO",
+    "delay": 1,
+    "family": "trend",
+    "metrics": {
+      "sharpe": 0.84,
+      "turnover": 0.22
+    },
+    "checks": {
+      "concentration": "PASS",
+      "sub_universe": "PENDING"
+    },
+    "source": "synthetic-example"
+  },
+  {
+    "record_id": "example-002",
+    "region": "DEMO",
+    "delay": 1,
+    "family": "mean_reversion",
+    "metrics": {
+      "sharpe": -0.31,
+      "turnover": 0.17
+    },
+    "checks": {
+      "concentration": "UNKNOWN",
+      "sub_universe": "FAIL"
+    },
+    "source": "synthetic-example"
+  },
+  {
+    "record_id": "example-003",
+    "region": "DEMO",
+    "delay": 0,
+    "family": "trend",
+    "metrics": {
+      "sharpe": 0.56,
+      "turnover": 0.28
+    },
+    "checks": {
+      "concentration": "PENDING",
+      "sub_universe": "PENDING"
+    },
+    "source": "synthetic-example"
+  }
+]
