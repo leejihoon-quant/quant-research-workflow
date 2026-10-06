@@ -7,7 +7,7 @@ A personal research engineering project exploring how quantitative alpha researc
 - Python tooling for organizing research evidence by market region and delay setting.
 - Structured records that preserve metrics, checks, provenance, and negative results instead of keeping only selected winners.
 - Offline validation and command-line lookup for reviewing prior research records.
-- A small, runnable pipeline example built entirely from fictional records.
+- A small synthetic-data pipeline demo and an adapted, callback-based collection helper.
 
 ## Demo
 
@@ -19,6 +19,8 @@ python pipeline_demo.py --family trend
 ```
 
 `sample_records.json` is synthetic teaching data. Its metrics do not represent actual research or performance.
+
+The `resilient_collection.py` module shows callback-based queue retries, cache validation, and reporting unresolved items. It is an adapted, standalone helper with no platform client, credentials, strategy logic, or private records.
 
 ## Workflow at a glance
 
@@ -33,4 +35,4 @@ Python standard library, JSON, and command-line tools.
 
 ## Scope and data
 
-This repository contains a sanitized overview and a small synthetic-data demonstration. It intentionally contains no platform credentials, personal account data, proprietary expressions, simulation exports, real performance claims, or execution code. The project is for research organization and learning; it is not investment advice or a production trading system.
+This repository contains a sanitized overview and small code examples. It intentionally contains no platform credentials, personal account data, proprietary expressions, simulation exports, real performance claims, or execution code. The project is for research organization and learning; it is not investment advice or a production trading system.
