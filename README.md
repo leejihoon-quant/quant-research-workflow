@@ -4,26 +4,33 @@ A personal research engineering project exploring how quantitative alpha researc
 
 ## What it demonstrates
 
-- Python tooling for organizing historical simulation evidence by market region and delay setting.
+- Python tooling for organizing research evidence by market region and delay setting.
 - Structured records that preserve metrics, checks, provenance, and negative results instead of keeping only selected winners.
-- Offline indexing and command-line lookup to make prior research easier to review.
-- Clear separation between research screening and later review; a screen result is not presented as proof of deployability or investment performance.
+- Offline validation and command-line lookup for reviewing prior research records.
+- A small, runnable pipeline example built entirely from fictional records.
+
+## Demo
+
+The demo validates a JSON record file, checks for duplicate IDs and malformed metric/check values, then filters records by region, delay, and idea family. It preserves `PENDING`, `UNKNOWN`, and failed checks in the output.
+
+```bash
+python pipeline_demo.py --region DEMO --delay 1
+python pipeline_demo.py --family trend
+```
+
+`sample_records.json` is synthetic teaching data. Its metrics do not represent actual research or performance.
 
 ## Workflow at a glance
 
-1. Organize previously collected research records into a consistent regional structure.
-2. Normalize available metadata and outcomes while retaining source references and missing or failed checks.
+1. Organize collected research records into a consistent regional structure.
+2. Validate metadata and outcomes while retaining source references and missing or failed checks.
 3. Build an offline index and query it by research scope or idea family.
 4. Review evidence before deciding whether further research is warranted.
 
 ## Technology
 
-Python, JSON/JSONL, command-line tools, and automated checks.
+Python standard library, JSON, and command-line tools.
 
 ## Scope and data
 
-This repository is a sanitized portfolio overview. It intentionally contains no platform credentials, personal account data, proprietary expressions, simulation exports, performance claims, or execution code. The project is for research organization and learning; it is not investment advice or a production trading system.
-
-## Further work
-
-A public, synthetic-data demonstration can be added to show the indexing and validation concepts without exposing private research material.
+This repository contains a sanitized overview and a small synthetic-data demonstration. It intentionally contains no platform credentials, personal account data, proprietary expressions, simulation exports, real performance claims, or execution code. The project is for research organization and learning; it is not investment advice or a production trading system.
